@@ -11,7 +11,8 @@ This approach involves resizing the entire image to multiple scales (e.g., 224x2
 5. **Sliding Window Technique**: This involves moving a fixed-size window across the image and processing each window independently. The results can then be stitched together to form a complete output. This method allows the model to focus on smaller areas of the image, preserving more detail.<br>
 This method involves moving a fixed-size window across the image in a systematic manner (e.g., row by row or column by column). The window can overlap with adjacent windows, allowing for more continuous coverage of the image.
 
-6. **Image Pyramid**: Create an image pyramid where the original image is downsampled to several resolutions. The model can then be applied to each level of the pyramid, and the outputs can be combined to leverage information from different scales.
+6. **Image Pyramid**: Create an image pyramid where the original image is downsampled to several resolutions. The model can then be applied to each level of the pyramid, and the outputs can be combined to leverage information from different scales.<br>
+An image pyramid is a specific structure where the original image is repeatedly downsampled to create a series of images at progressively lower resolutions. Each level of the pyramid represents a different scale of the image, and the model can process each level independently.
 
 7. **Attention Mechanisms**: If the model architecture supports it, attention mechanisms can help the model focus on important regions of the image, allowing it to learn to prioritize details even when the input size is reduced.
 
