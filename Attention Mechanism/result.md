@@ -16,3 +16,9 @@ In this specific image:
 - The attention on the text "A LIFE" may be due to the fact that it is prominent and distinctive within the context of the image.
 
 If this attention map is derived from a vision transformer (ViT) or a similar self-attention model, it's trying to understand what parts of the image contribute most to its output or predictions. This could be useful in identifying the important regions in tasks like image classification, object detection, or feature extraction.
+## Why Certain Parts Get More Attention:
+The parts of the image that get more attention are those that the model has learned are most discriminative or useful for the specific task it's performing. The model doesn’t inherently "know" which parts are more important but learns this through training.
+
+- **Textual Regions**: The attention map in your example shows high attention on parts of the text ("A LIFE"). Text tends to be highly distinctive and can carry crucial information, especially for tasks like image captioning or document analysis.
+- **Facial Features**: Faces, especially parts like the eyes, mouth, and chin, are often relevant for tasks involving human detection or recognition. Models typically learn that facial regions are more important than the background.
+- **Training Data**: The attention patterns are heavily influenced by the dataset the model was trained on. If the training data contains images where faces or text are commonly the focal point (like in object recognition or classification tasks), the model learns to prioritize these regions.
