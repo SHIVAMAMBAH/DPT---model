@@ -8,7 +8,8 @@ When using models like DPT (Dense Prediction Transformer) that require input ima
 3. **Multi-Scale Processing**: Some approaches involve processing the image at multiple scales. You can resize the image to different resolutions and run the model on each version, then combine the results. This can help capture details at various levels of granularity.<br>
 This approach involves resizing the entire image to multiple scales (e.g., 224x224, 512x512, etc.) and then processing each scaled version separately. The model learns from the different resolutions, capturing features at various levels of detail.
 
-5. **Sliding Window Technique**: This involves moving a fixed-size window across the image and processing each window independently. The results can then be stitched together to form a complete output. This method allows the model to focus on smaller areas of the image, preserving more detail.
+5. **Sliding Window Technique**: This involves moving a fixed-size window across the image and processing each window independently. The results can then be stitched together to form a complete output. This method allows the model to focus on smaller areas of the image, preserving more detail.<br>
+This method involves moving a fixed-size window across the image in a systematic manner (e.g., row by row or column by column). The window can overlap with adjacent windows, allowing for more continuous coverage of the image.
 
 6. **Image Pyramid**: Create an image pyramid where the original image is downsampled to several resolutions. The model can then be applied to each level of the pyramid, and the outputs can be combined to leverage information from different scales.
 
