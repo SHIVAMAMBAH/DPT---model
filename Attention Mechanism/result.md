@@ -1,5 +1,7 @@
 ![download](https://github.com/user-attachments/assets/91d047e7-fef9-4db3-a8be-49b92406810c)
 
+![download (1)](https://github.com/user-attachments/assets/66e59788-f07a-4d7a-919b-970ee6c1f192)
+
 In the attention map overlay image, the different colors represent the level of attention that the model is focusing on in various parts of the image. Here's what the colors indicate:
 
 1. **Red/Yellow Areas:** These regions have the **highest attention**. The model is focusing more on these areas, suggesting they contain important or significant features. For instance, in this image, it appears that the model is placing higher attention on the lower parts of the text ("A LIFE") and parts of the face, like the mouth and chin.
