@@ -53,6 +53,7 @@ Imagine an image of size 1024x1024 that we want to process using Multi-Scale Pro
 ### Why Resize Images at Different Scales?
 The core reason for resizing at multiple scales is that different scales reveal different features:
 
-- Larger Scales: Capture detailed features (edges, small objects).
-- Smaller Scales: Capture broader structures (overall object context).
+- **Larger Scales**: Capture detailed features (edges, small objects).
+- **Smaller Scales**: Capture broader structures (overall object context).
+
 This approach allows models like DPT to have better generalization across different object sizes, improving performance on tasks like depth prediction, segmentation, etc.
