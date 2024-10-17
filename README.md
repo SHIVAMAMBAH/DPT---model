@@ -14,5 +14,5 @@ The DPT model (Dense Prediction Transformer) is a tranformer-beased architecture
 - **Vision Transformer (ViT) Encoder** : The transformer encoder processes the patches through self-attention layers, building a global understanding of the image.
 - **Multi-Level feature Extraction** : The segmentation task benefits from both high-level semantics features and low-level details. DPT extracts features from multiple levels of the transformer (early, middle and late layers) to capture both global context and finer details.
 - **Decoder for Segementation** : The featires from the transformer are up-sampled through a decoder that gruadually increase the resilution. The decoder fuses multi-level feayures to retain fine details and spatial accuracy.
-- *Pixel-wise Classification** : The up-sampled features are passed through a classification layer, where each pixel is assigned a class label (e.g. background, object etc).
+- **Pixel-wise Classification** : The up-sampled features are passed through a classification layer, where each pixel is assigned a class label (e.g. background, object etc).
 - **Output (segmantation Map)** : The final output is a segmentation map, where each pixel of the image is assigned to specific category.
