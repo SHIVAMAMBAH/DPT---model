@@ -20,3 +20,7 @@ The DPT model (Dense Prediction Transformer) is a tranformer-beased architecture
 - **Input Image** : Similar to segmentation, the input image is resized to a standard size like 384x384.
 - **Patch Tokenization** : The image is split into patches, and positional embeddings are added to ensure spatial context is retained.
 - **Vision Transformer (ViT) Encoder** : The transfomer processes the tokens, learning global dependencies between different parts of the image to capture depth-related features.
+- **Depth-specific Feature Exactraction** : DPT extracts multi-level feature from different transformer layers. Since depth estimation requires understanding of object sizes, distances, and perspective, features from various transformer layers are combined to capture fine-grained depth cues.
+- **Up sampling for dense prediction** : The low-resolution feature maps are up-sampled through the convolution layers or other techniques to match the original image size.
+- **Depth Prediction Head** : A regressive layer is used to output continuous depth value for each pixel. Ulike segmentation, this is not a classification problem but a regression problem, where the moel outputs a continuous value for depth.
+- **Output (Depth Map)** : The final output is a depth map, where each pixel has a pedicted depth value (e.g. closer objects have lower values, while farther objects have higher values).
