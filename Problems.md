@@ -1,5 +1,5 @@
 ## Problem-01
-If the model resize the image to a specific size, then how will it handle the images of large size.
+If the model resize the image to a specific size, then the image will lose the details and other necessary information.
 ## Answer-01
 When using models like DPT (Dense Prediction Transformer) that require input images to be resized to a standard size (such as 224x224 or 384x384), there are several strategies to handle high-resolution images while minimizing the loss of detail:
 
