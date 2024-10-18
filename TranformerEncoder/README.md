@@ -2,4 +2,4 @@ The **DPT** model uses a ViT encoder. Specifically, it incorporates the self-att
 ### Structure of the encoder
 The core of the DPt encoder consists of multiple transformer layers where each layer performs the following operations:
 - **Multi-Head Self-Attention (MHSA)**
-  - **Self-Attention** : 
+  - **Self-Attention** : Each patch embedding interact with all other patch embedding to capture long range dependencies. This is done using the self-attention mechanism, where each embedding attends to all others based on their pairwise similarity.
