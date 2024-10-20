@@ -9,3 +9,10 @@ The core of the DPt encoder consists of multiple transformer layers where each l
 - **Feed-Forward Network (FFN)**
   - After the MHSA step, each embedding passes through a two-layer feed-forward network (FFN) with a non-linear activation function (typically GELU). This increases the representational power of the network.
   - The FFN typically consists of a fully connected layer that expands the embedding dimension (e.g., by a factor of 4), followed by a non-linear activation (GELU), and then another fully connected layer that reduces the dimension back to D.
+
+**Stacking Transformer Layers**
+The self-attention and feed-forward operations are repeated over several layers. The DPT model can have multiple stacked transformer layers, typically between 12 and 24 layers, similar to the ViT. Each layer enhances the global context by capturing relationships across all patches in the image.
+
+**Output of the Encoder**
+- The final output of the transformer encoder is a set of embeddings, one for each patch. These embeddings represent high-level global features of the image, enriched with spatial information due to the positional embeddings and attention mechanism.
+- These patch-wise embeddings are then reshaped back to form a dense feature map. The decoder uses this feature map for pixel-level predictions like depth estimation or segmentation.
