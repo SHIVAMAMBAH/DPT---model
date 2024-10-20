@@ -24,3 +24,40 @@ The DPT model (Dense Prediction Transformer) is a tranformer-beased architecture
 - **Up sampling for dense prediction** : The low-resolution feature maps are up-sampled through the convolution layers or other techniques to match the original image size.
 - **Depth Prediction Head** : A regressive layer is used to output continuous depth value for each pixel. Ulike segmentation, this is not a classification problem but a regression problem, where the moel outputs a continuous value for depth.
 - **Output (Depth Map)** : The final output is a depth map, where each pixel has a pedicted depth value (e.g. closer objects have lower values, while farther objects have higher values).
+
+## Object Detection
+For object detection, the DPT model would need to identify where objects are in an image (bounding
+boxes) and classify them into different categories. This involves not only dense prediction (predicting
+something at every pixel) but also learning spatial positions and object boundaries.
+Step-by-Step Process:
+- **Input Image**: The model takes the input image and resizes it to a standard size (e.g.,
+384x384).
+- **Image Tokenization (Patches)**: Like other DPT-based tasks, the image is divided into
+small, non-overlapping patches (e.g., 16x16 pixels). Each patch is flattened into a 1D vector,
+creating tokens. These tokens are also given positional embeddings to retain spatial
+information.
+- **Vision Transformer (ViT)** Encoder: The transformer encoder processes the tokens
+through multiple layers of self-attention. This helps the model understand global
+dependencies in the image, such as the relationship between different parts of objects and
+the surrounding context.
+- **Multi-Level Feature Representation**: Object detection requires both fine-grained
+details for small objects and high-level context for large objects. The DPT extracts features
+from multiple transformer layers to capture this multi-scale information.
+- **Object Query Generation**: In many transformer-based object detection models (like
+DETR), object queries are used. The DPT would similarly generate a fixed number of object
+queries (learnable embeddings). These queries interact with the image tokens through
+self-attention to detect potential objects.
+- **Bounding Box Regression & Classification**:
+  - **Bounding Box Prediction**: For each object query, the model predicts a bounding
+box (coordinates of the top-left and bottom-right corners).
+  - **Object Classification**: Each object query also predicts the class label of the object
+inside the bounding box (e.g., person, car, dog, etc.). This is done using a classification layer that maps the feature representation to one of the predefined
+classes.
+- **Multi-Level Decoder for Object Detection**: The features extracted from the transformer
+are passed through a decoder to refine the bounding box predictions and class labels. Since
+the DPT uses multi-level feature extraction, it can detect both large and small objects with
+better accuracy.
+- **Final Output (Object Detection)**: The final output consists of:
+ -  A set of bounding boxes for detected objects.
+ -  Class labels for each detected object.
+ -  Confidence scores indicating how likely the detection is correct.
