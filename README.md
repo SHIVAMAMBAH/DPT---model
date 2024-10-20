@@ -58,6 +58,6 @@ are passed through a decoder to refine the bounding box predictions and class la
 the DPT uses multi-level feature extraction, it can detect both large and small objects with
 better accuracy.
 - **Final Output (Object Detection)**: The final output consists of:
- -  A set of bounding boxes for detected objects.
- -  Class labels for each detected object.
- -  Confidence scores indicating how likely the detection is correct.
+  -  A set of bounding boxes for detected objects.
+  -  Class labels for each detected object.
+  -  Confidence scores indicating how likely the detection is correct.
